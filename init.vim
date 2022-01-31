@@ -7,6 +7,9 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'preservim/nerdtree'
+
+Plug 'vim-scripts/taglist.vim'
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
@@ -23,13 +26,14 @@ filetype on
 filetype plugin on
 filetype indent on
 
-let mapleader=" "
+let mapleader=","
 
 " With the bang Ack won't jump to the first result
 cnoreabbrev Ack Ack!
 noremap <leader>a :Ack! <cword><CR>
 " <leader>b is already used by vim-buffergator
 noremap <leader>g :Ggrep <cword><CR>
+noremap <leader>l :TlistToggle<CR>
 noremap <leader>n :Note 
 noremap <leader>p :CtrlP<CR>
 
@@ -39,6 +43,9 @@ let g:notes_directories=['~/vim_notes']
 " Airline conf
 let g:airline_theme='distinguished'
 let g:airline_powerline_fonts=1
+
+" Tag list width
+let g:Tlist_WinWidth=60
 
 " Gutentags configuration
 set statusline+=%{gutentags#statusline()}
