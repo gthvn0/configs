@@ -49,5 +49,6 @@ let g:Tlist_WinWidth=60
 
 " Gutentags configuration
 set statusline+=%{gutentags#statusline()}
-let g:gutentags_ctags_executable='/usr/bin/etags.ctags'
+let g:gutentags_enabled=0
+"let g:gutentags_ctags_executable='/usr/bin/etags.ctags'
 "let g:gutentags_trace = 1
