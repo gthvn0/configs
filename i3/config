@@ -199,5 +199,6 @@ bar {
     	}
 }
 
+exec sh ~/.screenlayout/bureau.sh
 exec sh ~/.fehbg &
 exec --no-startup-id xscreensaver

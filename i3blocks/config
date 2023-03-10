@@ -25,7 +25,8 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 # Change $SCRIPT_DIR to the location of your scripts!
-command=/usr/share/i3blocks/$BLOCK_NAME
+#command=/usr/share/i3blocks/$BLOCK_NAME
+command=/home/gthouvenin/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
@@ -35,25 +36,42 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 
-# Date Time
-#
 [time]
-color=#FFFF00
-command=date '+%Y-%m-%d %H:%M'
-interval=30
-#label=
+color=#7dddfa
+#command=date '+%Y-%m-%d %H:%M'
+command=date '+It is %H:%M'
+interval=60
 separator=true
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage]
+color=#faa0f7
+label=
+interval=10
+min_width= 90.00%
+separator=true
+
+#[load_average]
+#label=LOAD
+#label=
+#interval=10
+#separator=true
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
-separator=false
+color=#faa0f7
+label=
+separator=true
 interval=30
 
 [memory]
-label=SWAP
+color=#faa0f7
+label=易
 instance=swap
 separator=true
 interval=30
@@ -74,43 +92,39 @@ interval=30
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #IFACE=wlan0
-color=#00FF00
+label=ﯱ
+color=#e9fa7d
 interval=10
-separator=false
+separator=true
 
-[wifi]
-INTERFACE=wlp2s0
-#label=wifi:
-label=
-interval=10
-separator=false
-
-[bandwidth]
-#INTERFACE=eth0
-interval=5
-
-# CPU usage
-#
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[cpu_usage]
-label=CPU
-interval=10
-min_width=CPU 100.00%
+#[wifi]
+#INTERFACE=wlp2s0
+##label=wifi:
+#label=
+#interval=10
 #separator=false
 
-[load_average]
-#label=LOAD
-label=
-interval=10
+#[bandwidth]
+#INTERFACE=eth0
+#interval=5
+
+# Date Time
+#
+[time]
+color=#7dfa96
+#command=date '+%Y-%m-%d %H:%M'
+command=date '+%A %d %B %Y'
+interval=60
+label=
+separator=true
 
 # Battery indicator
 #
 # The battery instance defaults to 0.
-#[battery]
+[battery]
 #label=BAT
-#label=⚡
-#interval=30
+label=⚡
+interval=30
 
 # Generic media player support
 #
